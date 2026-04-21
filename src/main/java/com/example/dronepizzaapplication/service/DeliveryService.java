@@ -25,7 +25,7 @@ public class DeliveryService {
     }
 
     // Hent alle leveringer der ikke er afsluttet
-    public List<Delivery> findActiveDeliverie(){
+    public List<Delivery> findActiveDeliveries(){
         return deliveryRepository.findByActualTimeIsNull();
     }
 
@@ -84,5 +84,6 @@ public class DeliveryService {
         delivery.setActualTime(LocalDateTime.now());
         return deliveryRepository.save(delivery);
     }
+
 
 }
