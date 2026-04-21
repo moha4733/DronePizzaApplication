@@ -1,0 +1,216 @@
+/* css/style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #ff6600, #ff4400);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.header p {
+    opacity: 0.9;
+}
+
+/* Knap gruppe */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.btn-warning {
+    background-color: #ff6600;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #e55a00;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #da190b;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #2196F3;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #0b7dda;
+    transform: translateY(-2px);
+}
+
+/* Leverings cards */
+.delivery-list {
+    margin-top: 20px;
+}
+
+.delivery-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.delivery-card:hover {
+    transform: translateX(5px);
+}
+
+.missing-drone {
+    border-left: 6px solid #ff6600;
+    background: linear-gradient(90deg, #fff3e6, white);
+}
+
+.has-drone {
+    border-left: 6px solid #4CAF50;
+}
+
+.delivery-info {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.delivery-label {
+    font-weight: bold;
+    min-width: 100px;
+    color: #555;
+}
+
+.delivery-value {
+    color: #333;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.status-missing {
+    background-color: #ff6600;
+    color: white;
+}
+
+.status-has {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Beskeder */
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    display: none;
+}
+
+.message.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+    display: block;
+}
+
+.message.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+    display: block;
+}
+
+.message.info {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+    display: block;
+}
+
+/* Loading spinner */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .delivery-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .delivery-label {
+        min-width: auto;
+    }
+}

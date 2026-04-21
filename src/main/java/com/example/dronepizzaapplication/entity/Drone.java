@@ -1,5 +1,7 @@
 package com.example.dronepizzaapplication.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -9,7 +11,7 @@ import java.util.List;
 public class Drone {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String serialNumber;
     private String status;
@@ -24,9 +26,11 @@ public class Drone {
     public Drone(){}
 
     @ManyToOne
+    @JsonBackReference
     private Station station;
 
-    @OneToMany
+    @OneToMany(mappedBy = "drone")
+    @JsonManagedReference
     private List<Delivery> deliveries = new ArrayList<>();
 
 

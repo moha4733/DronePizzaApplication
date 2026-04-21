@@ -1,5 +1,8 @@
 package com.example.dronepizzaapplication.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -8,7 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Delivery {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String adresse;
     private LocalDateTime exceptedTime;
@@ -31,6 +34,7 @@ public class Delivery {
 
 
     @ManyToOne
+    @JsonBackReference
     private Drone drone;
 
 

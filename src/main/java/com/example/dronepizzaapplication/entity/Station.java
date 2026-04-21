@@ -1,9 +1,8 @@
 package com.example.dronepizzaapplication.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
 public class Station {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private double latitude;
     private double longitude;
@@ -30,6 +29,7 @@ public class Station {
 
 
     @OneToMany(mappedBy = "station")
+    @JsonManagedReference
     private List<Drone> drones = new ArrayList<>();
 
 
